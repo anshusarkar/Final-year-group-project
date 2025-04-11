@@ -22,7 +22,7 @@ The op group project that we built on 8th semester of my collage
 - Choose between multiple models
 - Clean and interactive UI
 - Built with **Flask**, **Keras**, and **OpenCV**
-- Lightweight deployment with external model loading
+
 
 ---
 
