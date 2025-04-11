@@ -2,8 +2,6 @@
 # $ conda create --name <env> --file <this file>
 # platform: linux-64
 # created-by: conda 24.11.3
-_libgcc_mutex=0.1=main
-_openmp_mutex=5.1=1_gnu
 absl-py=2.2.0=pyhd8ed1ab_0
 aiofiles=23.2.1=pypi_0
 aiohappyeyeballs=2.6.1=pyhd8ed1ab_0
