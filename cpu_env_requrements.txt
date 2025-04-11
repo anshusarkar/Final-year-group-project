@@ -162,7 +162,7 @@ tensorflow-estimator==2.15.0
 tensorflow-io-gcs-filesystem==0.37.1
 termcolor==3.0.1
 threadpoolctl==3.6.0
-torch==2.6.0
+torch
 torchcam==0.4.0
 torchmetrics==1.7.0
 torchnet==0.0.4
