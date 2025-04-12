@@ -2,55 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🧠 Brain Tumor Detector</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-
 </head>
 <body>
-    <audio id="myAudio" src="/static/sounds/reload_page.mp3" preload="auto"></audio>
+    
+    <audio id="audio1" src="/static/sounds/typing.mp3"></audio>
+    <audio id="audio2" src="/static/sounds/reload_page.mp3"></audio>
     <canvas id="neuronCanvas"></canvas>
-    <div class="overlay"></div> <!-- optional: dark overlay -->
-        <div class="container">
-            <div class="inner-container">
-                <h1 class="typewriter">Brain Tumor Detector 🧠</h1>
-                <p class="subtitle">Upload MRI scan to detect the presence of a brain tumor.</p>
-                <form class="upload-form" method="POST" enctype="multipart/form-data">                   
-                    <label for="file-upload" id="file-label" class="custom-file-upload" >📁 Choose Image</label>
-                    <input type="file" id="file-upload" name="file" accept="image/*" hidden />
-                    <div class="form-buttons">
-                        <button type="submit" aria-label="Submit MRI for prediction">🧪 Predict</button>
+    <div class="overlay"></div> <div class="container">
+        <div class="btn-container">
+        <label class="switch">
+            <input type="checkbox" />
+            <span class="slider">
+                <span class="title">Play</span>
+                <span class="ball">
+                    <span class="icon">
+                        <svg
+                            class="w-6 h-6 text-gray-800 dark:text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 18V6l8 6-8 6Z"
+                            ></path>
+                        </svg>
+                    </span>
+                </span>
+            </span>
+        </label>
+    </div>
+        <div class="inner-container">
+            <h1 class="typewriter">Brain Tumor Detector 🧠</h1>
+            <p class="subtitle">Upload MRI scan to detect the presence of a brain tumor.</p>
+            <form class="upload-form" method="POST" enctype="multipart/form-data">
+                <label for="file-upload" id="file-label" class="custom-file-upload" >📁 Choose Image</label>
+                <input type="file" id="file-upload" name="file" accept="image/*" hidden />
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn" aria-label="Submit MRI for prediction">🧪 Predict</button>
+                    <button type="button" class="clear-btn" aria-label="Clear uploaded file and reset">❌ Clear</button>
+                </div>
+            </form>
 
-                    </div>
-                    <div>
-                        <button type="button" class="clear-btn" aria-label="Clear uploaded file and reset">❌ Clear</button>
-                    </div>
-                </form>
-    
-                {% if image_path %}
-                    <div class="preview-section">
-                        <h2>📷 Uploaded Image</h2>
-                        <img src="{{ image_path }}" width="300" alt="Uploaded Image">
-                    </div>
-                {% endif %}
-    
-                {% if prediction %}
-                    <div class="result-section">
-                        <h2>🧬 Prediction</h2>
-                        {% if prediction.Error %}
-                            <p class="error">{{ prediction.Error }}</p>
-                        {% else %}
-                            <ul class="prediction-list">
-                                {% for label, prob in prediction.items() %}
-                                    <li><strong>{{ label }}</strong>: {{ prob }}%</li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </div>
-                {% endif %}
-            </div>
+            {% if image_path %}
+                <div class="preview-section">
+                    <h2>📷 Uploaded Image</h2>
+                    <img src="{{ image_path }}" alt="Uploaded Image">
+                </div>
+            {% endif %}
+
+            {% if prediction %}
+                <div class="result-section">
+                    <h2>🧬 Prediction</h2>
+                    {% if prediction.Error %}
+                        <p class="error">{{ prediction.Error }}</p>
+                    {% else %}
+                        <ul class="prediction-list">
+                            {% for label, prob in prediction.items() %}
+                                <li><strong>{{ label }}</strong>: {{ prob }}%</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
-    </body>    
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
 </html>

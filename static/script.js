@@ -7,10 +7,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const clearSound = new Audio('/static/sounds/cler-butn-click.mp3');
   const fileUploadSound = new Audio('/static/sounds/file-upload.mp3');
 
-  window.onload = function() {
-      var audio = document.getElementById("myAudio");
-      audio.play();
-  };
+
+    // Play the first audio
+    const audio1 = document.getElementById("audio1");
+    const audio2 = document.getElementById("audio2");
+  
+    // Play on load
+    window.addEventListener("load", () => {
+        audio1.play();
+      
+        setTimeout(() => {
+          audio2.play();
+      
+          // Optional: stop audio2 after 4 seconds
+          setTimeout(() => {
+            audio2.pause();
+            audio2.currentTime = 0;
+            console.log("⏹️ audio2 stopped after 4 seconds");
+          }, 4000);
+        }, 1000); // Delay audio2 by 1 second
+      });
+  
+    // Toggle audio using the switch
+    const audioToggleCheckbox = document.querySelector(".btn-container input[type='checkbox']");
+    const playLabel = document.querySelector(".btn-container .title");
+    
+  
+    if (audioToggleCheckbox) {
+      audioToggleCheckbox.addEventListener("change", () => {
+        window.location.reload();
+        if (audioToggleCheckbox.checked) {
+          playLabel.textContent = "Audio";
+          audio1.play();
+          
+          audio2.play();
+          
+        }
+      });
+    }
+  
 
   // File upload feedback
   fileInput.addEventListener('change', function () {
