@@ -4,45 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🧠 Brain Tumor Detector</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=1024">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1942476957864869"
+    crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-1942476957864869">
 </head>
 <body>
-    
+    <div style="text-align: center; margin-top: 1rem;">
+        <button id="start-audio">▶️ Start Audio</button>
+    </div>   
     <audio id="audio1" src="/static/sounds/typing.mp3"></audio>
     <audio id="audio2" src="/static/sounds/reload_page.mp3"></audio>
     <canvas id="neuronCanvas"></canvas>
     <div class="overlay"></div> <div class="container">
-        <div class="btn-container">
-        <label class="switch">
-            <input type="checkbox" />
-            <span class="slider">
-                <span class="title">Play</span>
-                <span class="ball">
-                    <span class="icon">
-                        <svg
-                            class="w-6 h-6 text-gray-800 dark:text-white"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="25"
-                            height="25"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M8 18V6l8 6-8 6Z"
-                            ></path>
-                        </svg>
-                    </span>
-                </span>
-            </span>
-        </label>
-    </div>
+        
         <div class="inner-container">
             <h1 class="typewriter">Brain Tumor Detector 🧠</h1>
             <p class="subtitle">Upload MRI scan to detect the presence of a brain tumor.</p>
@@ -79,5 +57,7 @@
         </div>
     </div>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1942476957864869"
+     crossorigin="anonymous"></script>
 </body>
 </html>

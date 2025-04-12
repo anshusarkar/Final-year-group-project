@@ -1,4 +1,10 @@
 /* General body settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #d3d3d3;
@@ -10,7 +16,8 @@ body {
     min-height: 100vh;
     position: relative;
     overflow: auto;
-    position: fixed;
+    contain: content;
+    position: relative;
 }
 
 /* Background image wrapper */
@@ -154,6 +161,9 @@ body::before {
     max-width: 807px;
     margin: auto auto;
     animation: fadeInForward 2s ease-out forwards;
+    margin-inline: 753px;
+
+
     
 }
 
@@ -170,12 +180,29 @@ body::before {
     perspective: 1000px;
     transition: transform 0.5s ease-out;
     transform-style: preserve-3d;
+    align-content: center;
+
 }
 .typewriter {
     overflow: hidden;             /* Hides the overflowing text */
     border-right: .1em solid #ffffff; /* Typing cursor */
     white-space: nowrap;         /* Keeps the text on a single line */
-    animation: typing 3.79s steps(25, end), blink-caret 0.75s step-end infinite;
+    animation: typing 4.79s steps(25, end), blink-caret 0.75s step-end infinite;
+  }
+
+  #start-audio {
+    position: fixed;
+    padding: revert-layer;
+    margin-top: -23px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+  }
+
+  #start-audio.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
   
   @keyframes typing {
@@ -287,6 +314,7 @@ input[type="file"] {
     gap: 12px;
     justify-content: center;
     margin-top: 20px;
+    padding-inline: 221px;
 }
 
 /* Typography */
@@ -298,7 +326,7 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 3.8rem;
+    font-size: 2.75rem;
 }
 
 .subtitle {
@@ -480,3 +508,13 @@ h1 {
 
     /* ... other phone-specific styles ... */
 }
+@media screen and (max-width: 768px) {
+    /* Don't change layout for small screens */
+    body {
+      transform: scale(0.8);
+      transform-origin: top left;
+      width: 1000px;
+      overflow-x: auto;
+    }
+  }
+  
