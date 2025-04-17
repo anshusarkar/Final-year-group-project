@@ -10,6 +10,11 @@ import os
 import gdown  # pip install gdown
 
 model_path = "modelVgg16.pth"
+
+UPLOAD_FOLDER = 'static/uploads/'
+
+# Create the folder if it doesn't exist
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     
 if not os.path.exists(model_path):
         print("[INFO] Model not found. Attempting to download...")
@@ -32,7 +37,8 @@ if not os.path.exists(model_path):
 
 
 app = Flask(__name__)
-UPLOAD_FOLDER = 'static/uploads/'
+
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Load class labels from JSON mapping
