@@ -3,7 +3,7 @@
 
 # 🧠 Brain Tumor Detector
 
-A deep learning-powered web application to detect brain tumors from MRI scans using pre-trained CNN models like **VGG16** and **EfficientNetB3**.
+A deep learning-powered web application to detect brain tumors from MRI scans using pre-trained CNN model **VGG16**.
 The op group project that we built on 8th semester of my collage 
 
 ---
