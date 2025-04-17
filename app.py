@@ -36,12 +36,12 @@ UPLOAD_FOLDER = 'static/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Load class labels from JSON mapping
-try:
-    with open("class_indices.json") as f:
-        idx_to_class = {int(v): k for k, v in json.load(f).items()}
-except Exception as e:
-    print("⚠️ Failed to load class_indices.json, using fallback labels.")
-    idx_to_class = {0: 'Glioma', 1: 'Meningioma', 2: 'No Tumor', 3: 'Pituitary'}
+# try:
+#     with open("class_indices.json") as f:
+#         idx_to_class = {int(v): k for k, v in json.load(f).items()}
+# except Exception as e:
+#     print("⚠️ Failed to load class_indices.json, using fallback labels.")
+#     idx_to_class = {0: 'Glioma', 1: 'Meningioma', 2: 'No Tumor', 3: 'Pituitary'}
 
 # Device config
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -107,4 +107,4 @@ def index():
     return render_template("index.html", prediction=prediction, image_path=image_path)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=8000)
