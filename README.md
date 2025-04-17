@@ -21,7 +21,7 @@ The awesome group project that we built on 8th semester of my collage
 - Upload MRI images for tumor detection
 - Choose between multiple models
 - Clean and interactive UI
-- Built with **Flask**, **Keras**, and **OpenCV**
+- Built with **Flask**, **Pytorch**, and **OpenCV**
 
 
 ---
