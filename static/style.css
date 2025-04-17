@@ -514,13 +514,5 @@ h1 {
 
     /* ... other phone-specific styles ... */
 }
-@media screen and (max-width: 768px) {
-    /* Don't change layout for small screens */
-    body {
-      transform: scale(0.8);
-      transform-origin: top left;
-      width: 1000px;
-      overflow-x: auto;
-    }
-  }
+
   
