@@ -514,13 +514,77 @@ h1 {
 
     /* ... other phone-specific styles ... */
 }
-@media screen and (max-wiidth: 768px){
+/* @media screen and (max-wiidth: 768px){
     body{
         transform: scale(0.8);
         transform-origin: top left;
         width: 1000px;
         overflow-x: auto;
     }
-}
+} */
 
+
+
+.emoji {
+    display: inline-block;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  
+  /* Bounce */
+  .bounce {
+    animation-name: bounce;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  
+  /* Pulse */
+  .pulse {
+    animation-name: pulse;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+  
+  /* Swing */
+  .swing {
+    animation-name: swing;
+  }
+  @keyframes swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  /* Shake */
+  .shake {
+    animation-name: shake;
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+  }
+  
+  /* Fade In & Out */
+  .fade {
+    animation-name: fade;
+  }
+  @keyframes fade {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  
+  /* Twinkle */
+  .twinkle {
+    animation-name: twinkle;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; transform: scale(1.1); }
+  }
   
